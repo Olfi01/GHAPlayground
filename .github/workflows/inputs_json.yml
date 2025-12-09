@@ -1,0 +1,13 @@
+on:
+  workflow_dispatch:
+    inputs:
+      one:
+        type: boolean
+      two:
+        type: boolean
+
+jobs:
+  print:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "${{ toJSON(inputs) }}"
